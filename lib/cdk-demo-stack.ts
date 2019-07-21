@@ -8,6 +8,7 @@ export class CdkDemoStack extends cdk.Stack {
     // The code that defines your stack goes here
     const vpc = new ec2.Vpc(this, 'TheVPC', {
       cidr: '172.16.0.0/21',
+      natGateways: 0,
       subnetConfiguration: [
         {
           cidrMask: 24,
