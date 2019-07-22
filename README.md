@@ -24,7 +24,25 @@ I wanted to see how things would go straight-off-the-bat and I'll provide a summ
 
 - [Install node and npm](https://nodejs.org/en/download/)
 - [install the CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) and ensure you have an AWS profile referenced in the command-line or the environment
+- export the AWS Region for AMI selection
 - install local dependencies from package.json 
+
+## I've only provided an AMI for us-east-1
+
+The method uses a map and the map needs to know which region I really want and so we need to export the region for consumption by the app
+
+```
+export AWS_DEFAULT_REGION=us-east-1
+```
+
+If you want to use exports instead if --profile then now is the time to also export your keys
+
+NB I didn't test this case.
+
+```
+export AWS_ACCESS_KEY_ID=XXXXX
+export AWS_SECRET_KEY=ZZZZZZ
+```
 
 ## Install local dependencies from package.json 
 
