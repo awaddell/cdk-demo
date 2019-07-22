@@ -33,7 +33,10 @@ export class CdkDemoStack extends cdk.Stack {
       vpc,
       vpcSubnets: {subnetName: 'Application'},
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
-      machineImage: new ec2.AmazonLinuxImage(),
+      machineImage: new ec2.GenericLinuxImage({
+        'us-east-1': 'ami-03efe20853d0a91d5',
+        'us-west-1': 'ami-08247df491e6a6e60',
+      }),
     });
 
     const lb = new elbv2.ApplicationLoadBalancer(this, 'LB', {
