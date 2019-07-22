@@ -60,7 +60,7 @@ export class CdkDemoStack extends cdk.Stack {
     Content-Disposition: attachment; filename="userdata.txt"
     
     #!/bin/bash
-    /bin/echo "Hello World" >> /tmp/testfile.txt
+    /bin/echo "Hello World" > /opt/bitnami/nginx/html/index.html 
 
     --//
     `
