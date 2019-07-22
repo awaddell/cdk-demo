@@ -31,6 +31,7 @@ export class CdkDemoStack extends cdk.Stack {
     
     const asg = new autoscaling.AutoScalingGroup(this, 'ASG', {
       vpc,
+      vpcSubnets: {subnetName: 'Application'},
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
       machineImage: new ec2.AmazonLinuxImage(),
     });
